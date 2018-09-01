@@ -124,6 +124,12 @@ export default class HomePage extends Component {
         `}</style>
 
         <Container text style={{ marginTop: '2em' }}>
+          <Image
+            centered
+            style={{ margin: 'auto' }}
+            size="medium"
+            src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
+          />
           <Header as="h1">Bay Area Writing Coach</Header>
           <p>Editing | Something | Consulting</p>
         </Container>
@@ -136,7 +142,8 @@ export default class HomePage extends Component {
           onBottomVisible={this.unStickTopMenu}
           once={false}>
           <Menu
-            borderless
+            link
+            stackable
             fixed={menuFixed && 'top'}
             style={menuFixed ? fixedMenuStyle : menuStyle}>
             <Container text>
@@ -147,8 +154,12 @@ export default class HomePage extends Component {
                 />
               </Menu.Item>
               <Menu.Item header>Bay Area Writing Coach</Menu.Item>
-              <Menu.Item as="a">Bio</Menu.Item>
-              <Menu.Item as="a">Philosophy</Menu.Item>
+              <Menu.Item href="#bio" as="a">
+                Bio
+              </Menu.Item>
+              <Menu.Item href="#philo" as="a">
+                Philosophy
+              </Menu.Item>
               <Menu.Item as="a">Contact</Menu.Item>
               <Menu.Item as="a">Payment</Menu.Item>
 
@@ -205,7 +216,6 @@ export default class HomePage extends Component {
               </Menu.Item>
             </Menu>
           </div>
-          {_.times(1, i => <Paragraph key={i} />)}
 
           <Paragraph />
           <Paragraph />
@@ -220,10 +230,10 @@ export default class HomePage extends Component {
                     paddingTop: '2em'
                   }}>
                   <List>
-                    <List.Item>Javascript | ES6</List.Item>
-                    <List.Item>Python</List.Item>
-                    <List.Item>Ruby</List.Item>
-                    <List.Item>HTML</List.Item>
+                    <List.Item>College Applications</List.Item>
+                    <List.Item>Essays</List.Item>
+                    <List.Item>Research Papers</List.Item>
+                    <List.Item>Thesis</List.Item>
                     <List.Item>CSS</List.Item>
                   </List>
                 </Grid.Column>
@@ -234,11 +244,11 @@ export default class HomePage extends Component {
                     paddingTop: '2em'
                   }}>
                   <List>
-                    <List.Item>Flask | SQLAlchemy</List.Item>
-                    <List.Item>PostgreSQL | MongoDB | NoSQL</List.Item>
-                    <List.Item>React | Redux | Router</List.Item>
-                    <List.Item>Mocha & Chai</List.Item>
-                    <List.Item>Node.JS | Express</List.Item>
+                    <List.Item>High School</List.Item>
+                    <List.Item>College</List.Item>
+                    <List.Item>Writers</List.Item>
+                    <List.Item>Readers</List.Item>
+                    <List.Item>Others</List.Item>
                   </List>
                 </Grid.Column>
                 <Grid.Column
@@ -248,15 +258,19 @@ export default class HomePage extends Component {
                     paddingTop: '2em'
                   }}>
                   <List>
-                    <List.Item>Object Oriented Programming (OOP)</List.Item>
-                    <List.Item>Agile Methodology</List.Item>
-                    <List.Item>Github</List.Item>
-                    <List.Item>Test Driven Development</List.Item>
-                    <List.Item>REST APIs</List.Item>
+                    <List.Item>Editing</List.Item>
+                    <List.Item>Consulting</List.Item>
+                    <List.Item>Feedback</List.Item>
+                    <List.Item>Teaching</List.Item>
+                    <List.Item>Success</List.Item>
                   </List>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
+          </Segment>
+          <Segment id="philo">
+            <Paragraph />
+            <Paragraph />
           </Segment>
         </Container>
 
@@ -265,7 +279,7 @@ export default class HomePage extends Component {
           style={{ margin: '5em 0em 0em', padding: '5em 0em' }}
           vertical>
           <Container textAlign="center">
-            <Grid columns={4} divided stackable inverted>
+            <Grid columns={2} divided stackable inverted>
               <Grid.Row>
                 <Grid.Column>
                   <Header inverted as="h4" content="Group 1" />
@@ -276,30 +290,10 @@ export default class HomePage extends Component {
                     <List.Item as="a">Link Four</List.Item>
                   </List>
                 </Grid.Column>
-                <Grid.Column>
-                  <Header inverted as="h4" content="Group 2" />
-                  <List link inverted>
-                    <List.Item as="a">Link One</List.Item>
-                    <List.Item as="a">Link Two</List.Item>
-                    <List.Item as="a">Link Three</List.Item>
-                    <List.Item as="a">Link Four</List.Item>
-                  </List>
-                </Grid.Column>
-                <Grid.Column>
-                  <Header inverted as="h4" content="Group 3" />
-                  <List link inverted>
-                    <List.Item as="a">Link One</List.Item>
-                    <List.Item as="a">Link Two</List.Item>
-                    <List.Item as="a">Link Three</List.Item>
-                    <List.Item as="a">Link Four</List.Item>
-                  </List>
-                </Grid.Column>
+
                 <Grid.Column>
                   <Header inverted as="h4" content="Footer Header" />
-                  <p>
-                    Extra space for a call to action inside the footer that
-                    could help re-engage users.
-                  </p>
+                  <p>craigcorsini@gmail.com</p>
                 </Grid.Column>
               </Grid.Row>
             </Grid>
