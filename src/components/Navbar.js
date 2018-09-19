@@ -18,8 +18,6 @@ const menuStyle = {
   border: 'none',
   borderRadius: 0,
   boxShadow: 'none',
-  marginBottom: '2em',
-  marginTop: '1em',
   transition: 'box-shadow 0.5s ease, padding 0.5s ease'
 }
 
@@ -85,18 +83,22 @@ class Navbar extends Component {
         once={false}>
         <Menu
           compact
-          link
           borderless
           fixed={menuFixed && 'top'}
           style={menuFixed ? fixedMenuStyle : menuStyle}>
           <Container text>
+            <Menu.Item href="/" as="a">
+              Home
+            </Menu.Item>
+            <Menu.Item href="/samples" as="a">
+              Portfolio
+            </Menu.Item>
             <Menu.Item href="/blog" as="a">
               Blog
             </Menu.Item>
-            <Menu.Item href="/Contact" as="a">
-              Samples
+            <Menu.Item as="a" href="#footer">
+              Contact
             </Menu.Item>
-            <Menu.Item as="a">Contact</Menu.Item>
           </Container>
         </Menu>
       </Visibility>

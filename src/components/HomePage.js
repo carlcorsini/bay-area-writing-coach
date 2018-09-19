@@ -1,7 +1,9 @@
 import _ from 'lodash'
 import FadeIn from 'react-fade-in'
+import CopyToClipboard from 'react-copy-to-clipboard'
 import React, { Component } from 'react'
 import {
+  Card,
   Container,
   Divider,
   Dropdown,
@@ -12,7 +14,8 @@ import {
   List,
   Menu,
   Segment,
-  Visibility
+  Visibility,
+  Button
 } from 'semantic-ui-react'
 
 let quotes = [
@@ -92,6 +95,17 @@ class HomePage extends Component {
   render() {
     const { menuFixed, overlayFixed, overlayRect } = this.state
 
+    const handleQuote = e => {
+      console.log('hey')
+      let quote = randomQuote(quotes, 12)
+      let quote2 = randomQuote(quotes, 12)
+      this.setState({
+        quote: quote[0],
+        author: quote[1],
+        quote2: quote2[0],
+        author2: quote2[1]
+      })
+    }
     return (
       <div>
         <style>{`
@@ -101,27 +115,38 @@ class HomePage extends Component {
         `}</style>
 
         <Container text>
+          {/* <Card centered> */}
           <Image
             centered
             style={{ margin: 'auto' }}
-            size="medium"
+            size="small"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
           />
-          <Header style={{ fontSize: '3em' }} as="h1">
+          {/* </Card> */}
+          <Header style={{ fontSize: '2.5em' }} as="h1">
             Bay Area Writing Coach
           </Header>
-
+          {/* <Button
+            size="mini"
+            icon="refresh"
+            style={{ marginBottom: '1em' }}
+            onClick={handleQuote}
+            basic
+            label="New Quote"
+          /> */}
           <br />
-          <FadeIn>
-            <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
-            <p> -{this.state.author}</p>
-          </FadeIn>
+          <Container>
+            <FadeIn>
+              <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
+              <p> -{this.state.author}</p>
+            </FadeIn>
+          </Container>
         </Container>
 
         <Container text>
           <Container
             text
-            style={{ fontSize: '1.2em', marginTop: '2em' }}
+            style={{ fontSize: '1.2em', marginTop: '1em' }}
             textAlign="left">
             <p>
               Craig J. “Skip” Corsini, 67, is a lifelong Bay Area resident with
@@ -140,9 +165,26 @@ class HomePage extends Component {
             </p>
             <p>Bay Area Writing Coach was established in 2018.</p>
           </Container>
-
-          <Container style={{ marginTop: '5em', marginBottom: '5em' }} vertical>
+          <Container style={{ marginTop: '2em' }}>
+            <Button.Group vertical>
+              <Button
+                icon="email"
+                primary
+                size="huge"
+                href="mailto:craigcorsini@gmail.com">
+                Inquire By Email
+              </Button>
+              <CopyToClipboard text={'craigcorsini@gmail.com'}>
+                <Button icon="copy" size="huge" secondary>
+                  Copy Email to Clipboard
+                </Button>
+              </CopyToClipboard>
+            </Button.Group>
+            <Header>Fee structure available by request</Header>
+          </Container>
+          <Container style={{ marginTop: '5em', marginBottom: '5em' }}>
             <Grid divided columns="equal" stackable>
+              <Header>Services Include:</Header>
               <Grid.Row textAlign="center">
                 <Grid.Column
                   style={{
