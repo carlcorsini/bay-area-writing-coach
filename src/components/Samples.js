@@ -133,8 +133,6 @@ class Samples extends Component {
           <Header style={{ fontSize: '2.5em' }} as="h1">
             Portfolio
           </Header>
-
-          <br />
           <Container fluid>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
@@ -186,12 +184,12 @@ class Samples extends Component {
               centered
               src="https://i.imgur.com/A8AFzqu.jpg"
             />
-            <Header textAlign="center" as="h6">
-              Displayed with permission from the Association for
-              <a href="https://td.org"> Taken Development </a>&
-              <a href="https://td.org/td"> TD magazine</a>
-            </Header>
           </Container>
+          <Header textAlign="center" as="h6">
+            Displayed with permission from the Association for
+            <a href="https://td.org"> Taken Development </a>&
+            <a href="https://td.org/td"> TD magazine</a>
+          </Header>
           <Container style={{ marginTop: '3em' }}>
             <Divider />
             <FadeIn>

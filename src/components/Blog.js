@@ -133,7 +133,6 @@ class Blog extends Component {
             Blog
           </Header>
 
-          <br />
           <Container fluid>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>

@@ -18,7 +18,8 @@ const menuStyle = {
   border: 'none',
   borderRadius: 0,
   boxShadow: 'none',
-  transition: 'box-shadow 0.5s ease, padding 0.5s ease'
+  transition: 'box-shadow 0.5s ease, padding 0.5s ease',
+  marginBottom: '1em'
 }
 
 const fixedMenuStyle = {
@@ -82,7 +83,6 @@ class Navbar extends Component {
         onBottomVisible={this.unStickTopMenu}
         once={false}>
         <Menu
-          compact
           borderless
           fixed={menuFixed && 'top'}
           style={menuFixed ? fixedMenuStyle : menuStyle}>

@@ -118,7 +118,6 @@ class HomePage extends Component {
           {/* <Card centered> */}
           <Image
             centered
-            style={{ margin: 'auto' }}
             size="small"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
           />
@@ -134,7 +133,6 @@ class HomePage extends Component {
             basic
             label="New Quote"
           /> */}
-          <br />
           <Container>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
@@ -144,6 +142,7 @@ class HomePage extends Component {
         </Container>
 
         <Container text>
+          <Divider />
           <Container
             text
             style={{ fontSize: '1.2em', marginTop: '1em' }}
@@ -180,7 +179,7 @@ class HomePage extends Component {
                 </Button>
               </CopyToClipboard>
             </Button.Group>
-            <Header>Fee structure available by request</Header>
+            <Header>Fee structure available upon request</Header>
           </Container>
           <Container style={{ marginTop: '5em', marginBottom: '5em' }}>
             <Grid divided columns="equal" stackable>
@@ -226,6 +225,7 @@ class HomePage extends Component {
                 </Grid.Column>
               </Grid.Row>
             </Grid>
+            <Divider />
           </Container>
           <Container style={{ fontSize: '1.2em' }} textAlign="left">
             <Header textAlign="center">Philosophy</Header>
@@ -255,12 +255,14 @@ class HomePage extends Component {
               determination, “When you are going through hell, keep going.”
             </p>
           </Container>
-          <div style={{ marginTop: '3em' }}>
+          <Container style={{ marginTop: '3em' }}>
+            <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
               <p> -{this.state.author2}</p>
             </FadeIn>
-          </div>
+            <Divider />
+          </Container>
         </Container>
       </div>
     )
