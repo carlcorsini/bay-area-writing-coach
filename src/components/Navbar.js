@@ -90,17 +90,11 @@ class Navbar extends Component {
           fixed={menuFixed && 'top'}
           style={menuFixed ? fixedMenuStyle : menuStyle}>
           <Container text>
-            <Menu.Item>
-              <Image
-                size="mini"
-                src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
-              />
+            <Menu.Item href="/blog" as="a">
+              Blog
             </Menu.Item>
-            <Menu.Item href="#bio" as="a">
-              Bio
-            </Menu.Item>
-            <Menu.Item href="#philo" as="a">
-              Philosophy
+            <Menu.Item href="/Contact" as="a">
+              Samples
             </Menu.Item>
             <Menu.Item as="a">Contact</Menu.Item>
           </Container>

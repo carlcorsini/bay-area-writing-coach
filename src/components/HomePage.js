@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import FadeIn from 'react-fade-in'
 import React, { Component } from 'react'
 import {
   Container,
@@ -14,10 +15,78 @@ import {
   Visibility
 } from 'semantic-ui-react'
 
+let quotes = [
+  [
+    'Yes, writing is easy... all you have to do is open a vein and bleed.',
+    'Red Smith'
+  ],
+  [
+    'I love deadlines. I love the whooshing noise they make as they go by.',
+    'Douglas Adams'
+  ],
+  [
+    "What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.",
+    'J.D. Salinger'
+  ],
+  [
+    'Lock up your libraries if you like; but there is no gate, no lock, no bolt that you can set upon the freedom of my mind.',
+    'Virginia Woolf'
+  ],
+  [
+    'One day I will find the right words, and they will be simple.',
+    'Jack Kerouac'
+  ],
+  [
+    'I have not failed. I’ve just found 10,000 ways that won’t work.',
+    'Thomas Edison'
+  ],
+  [
+    'You never have to change anything you got up in the middle of the night to write.',
+    'Saul Bellow'
+  ],
+  [
+    'No tears in the writer, no tears in the reader. No surprise in the writer, no surprise in the reader.',
+    'Robert Frost'
+  ],
+  [
+    'The difference between the almost right word and the right word is really a large matter. ’tis the difference between the lightning bug and the lightning.',
+    'Mark Twain'
+  ],
+  ['Fiction is the truth inside the lie.', 'Stephen King'],
+  [
+    "Don't tell me the moon is shining; show me the glint of light on broken glass.",
+    'Anton Chekhov'
+  ],
+  [
+    'Start writing, no matter what. The water does not flow until the faucet is turned on.',
+    "Louis L'Amour"
+  ]
+]
+
+const randomQuote = (array, max) => {
+  let random = Math.floor(Math.random() * Math.floor(max))
+  return array[random]
+}
+
 class HomePage extends Component {
   state = {
     menuFixed: false,
-    overlayFixed: false
+    overlayFixed: false,
+    quote: '',
+    author: '',
+    quote2: '',
+    author2: ''
+  }
+
+  componentDidMount() {
+    let quote = randomQuote(quotes, 12)
+    let quote2 = randomQuote(quotes, 12)
+    this.setState({
+      quote: quote[0],
+      author: quote[1],
+      quote2: quote2[0],
+      author2: quote2[1]
+    })
   }
 
   render() {
@@ -38,14 +107,21 @@ class HomePage extends Component {
             size="medium"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
           />
-          <Header as="h1">Bay Area Writing Coach</Header>
-          {/* <p>Editing | Something | Consulting</p> */}
+          <Header style={{ fontSize: '3em' }} as="h1">
+            Bay Area Writing Coach
+          </Header>
+
+          <br />
+          <FadeIn>
+            <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
+            <p> -{this.state.author}</p>
+          </FadeIn>
         </Container>
 
         <Container text>
           <Container
             text
-            style={{ fontSize: '1.2em', marginTop: '4em' }}
+            style={{ fontSize: '1.2em', marginTop: '2em' }}
             textAlign="left">
             <p>
               Craig J. “Skip” Corsini, 67, is a lifelong Bay Area resident with
@@ -137,6 +213,12 @@ class HomePage extends Component {
               determination, “When you are going through hell, keep going.”
             </p>
           </Container>
+          <div style={{ marginTop: '3em' }}>
+            <FadeIn>
+              <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
+              <p> -{this.state.author2}</p>
+            </FadeIn>
+          </div>
         </Container>
       </div>
     )

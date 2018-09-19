@@ -27,7 +27,12 @@ class Footer extends Component {
               <Grid.Column>
                 <Header inverted as="h4" content="Group 1" />
                 <List link inverted>
-                  <List.Item as="a">Link One</List.Item>
+                  <List.Item
+                    target="_blank"
+                    as="a"
+                    href="http://skipcorsini.tumblr.com/">
+                    Tumblr
+                  </List.Item>
                   <List.Item as="a">Link Two</List.Item>
                   <List.Item as="a">Link Three</List.Item>
                   <List.Item as="a">Link Four</List.Item>
@@ -40,21 +45,6 @@ class Footer extends Component {
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          {/* <Divider inverted section />
-          <List horizontal inverted divided link>
-            <List.Item as="a" href="#">
-              Site Map
-            </List.Item>
-            <List.Item as="a" href="#">
-              Contact Us
-            </List.Item>
-            <List.Item as="a" href="#">
-              Terms and Conditions
-            </List.Item>
-            <List.Item as="a" href="#">
-              Privacy Policy
-            </List.Item>
-          </List> */}
         </Container>
       </Segment>
     )
