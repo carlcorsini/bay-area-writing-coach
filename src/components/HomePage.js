@@ -19,49 +19,7 @@ import {
   Button
 } from 'semantic-ui-react'
 
-let quotes = [
-  [
-    'Yes, writing is easy... all you have to do is open a vein and bleed.',
-    'Red Smith'
-  ],
-  [
-    'I love deadlines. I love the whooshing noise they make as they go by.',
-    'Douglas Adams'
-  ],
-  [
-    "What really knocks me out is a book that, when you're all done reading it, you wish the author that wrote it was a terrific friend of yours and you could call him up on the phone whenever you felt like it. That doesn't happen much, though.",
-    'J.D. Salinger'
-  ],
-  [
-    'Lock up your libraries if you like; but there is no gate, no lock, no bolt that you can set upon the freedom of my mind.',
-    'Virginia Woolf'
-  ],
-  [
-    'One day I will find the right words, and they will be simple.',
-    'Jack Kerouac'
-  ],
-  [
-    'You never have to change anything you got up in the middle of the night to write.',
-    'Saul Bellow'
-  ],
-  [
-    'No tears in the writer, no tears in the reader. No surprise in the writer, no surprise in the reader.',
-    'Robert Frost'
-  ],
-  [
-    'The difference between the almost right word and the right word is really a large matter. ’tis the difference between the lightning bug and the lightning.',
-    'Mark Twain'
-  ],
-  ['Fiction is the truth inside the lie.', 'Stephen King'],
-  [
-    "Don't tell me the moon is shining; show me the glint of light on broken glass.",
-    'Anton Chekhov'
-  ],
-  [
-    'Start writing, no matter what. The water does not flow until the faucet is turned on.',
-    "Louis L'Amour"
-  ]
-]
+import quotes from './quotes'
 
 const randomQuote = (array, max) => {
   let random = Math.floor(Math.random() * Math.floor(max))
@@ -80,8 +38,8 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, 11)
-    let quote2 = randomQuote(quotes, 11)
+    let quote = randomQuote(quotes, 12)
+    let quote2 = randomQuote(quotes, 12)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -91,8 +49,8 @@ class HomePage extends Component {
   }
 
   handleQuote = e => {
-    let quote = randomQuote(quotes, 11)
-    let quote2 = randomQuote(quotes, 11)
+    let quote = randomQuote(quotes, 12)
+    let quote2 = randomQuote(quotes, 12)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -185,7 +143,7 @@ class HomePage extends Component {
             </Button.Group>
             <Header>Fee structure available upon request</Header>
           </Container>
-          <Container style={{ marginTop: '5em', marginBottom: '5em' }}>
+          <Container style={{ marginTop: '5em', marginBottom: '3em' }}>
             <Grid divided columns="equal" stackable>
               <Header>Services Include:</Header>
               <Grid.Row textAlign="center">
@@ -230,6 +188,15 @@ class HomePage extends Component {
               </Grid.Row>
             </Grid>
             <Divider />
+          </Container>
+          <Container style={{ marginBottom: '3em' }}>
+            <Image
+              style={{ boxShadow: '1px 1px 10px 1px rgba(30, 31, 38, 0.58)' }}
+              rounded
+              centered
+              size="large"
+              src="https://i.imgur.com/gxHkwWG.jpg"
+            />
           </Container>
           <Container style={{ fontSize: '1.2em' }} textAlign="left">
             <Header textAlign="center">Philosophy</Header>

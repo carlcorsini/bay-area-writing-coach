@@ -26,7 +26,7 @@ class Footer extends Component {
         <Container id="footer" textAlign="center">
           <Grid columns={2} divided stackable inverted>
             <Grid.Row>
-              <Grid.Column>
+              <Grid.Column style={{ marginTop: '2em' }}>
                 <Header inverted as="h4" content="Links" />
                 <List link inverted>
                   <List.Item as="a" href="/home">
@@ -45,10 +45,6 @@ class Footer extends Component {
                     Tumblr
                   </List.Item>
                 </List>
-                <p>
-                  Website Designed & Created by
-                  <a href="http://carlcorsini.com"> Carl Corsini</a>
-                </p>
               </Grid.Column>
 
               <Grid.Column>
@@ -70,6 +66,12 @@ class Footer extends Component {
                     </Button>
                   </CopyToClipboard>
                 </Button.Group>
+                <div style={{ marginTop: '1em', fontSize: '.75em' }}>
+                  <p>
+                    Website Designed by
+                    <a href="http://carlcorsini.com"> Carl Corsini</a>
+                  </p>
+                </div>
               </Grid.Column>
             </Grid.Row>
           </Grid>
