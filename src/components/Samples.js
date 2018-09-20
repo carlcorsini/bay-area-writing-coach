@@ -156,7 +156,7 @@ class Samples extends Component {
           <Header textAlign="center" as="h6">
             Displayed with permission from the Association for
             <a href="https://td.org"> Taken Development </a>&
-            <a href="https://td.org/td"> TD magazine</a>
+            <a href="https://td.org/td"> TD Magazine</a>
           </Header>
           <Container text style={{ marginTop: '3em' }}>
             <Divider />
@@ -184,7 +184,7 @@ class Samples extends Component {
           <Header textAlign="center" as="h6">
             Displayed with permission from the Association for
             <a href="https://td.org"> Taken Development </a>&
-            <a href="https://td.org/td"> TD magazine</a>
+            <a href="https://td.org/td"> TD Magazine</a>
           </Header>
           <Container text style={{ marginTop: '3em' }}>
             <Divider />
@@ -212,7 +212,7 @@ class Samples extends Component {
           <Header textAlign="center" as="h6">
             Displayed with permission from the Association for
             <a href="https://td.org"> Taken Development </a>&
-            <a href="https://td.org/td"> TD magazine</a>
+            <a href="https://td.org/td"> TD Magazine</a>
           </Header>
         </Container>
 
