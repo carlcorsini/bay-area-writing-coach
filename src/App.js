@@ -7,9 +7,13 @@ import Blog from './components/Blog'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+var http = require('http')
 
 class App extends Component {
   render() {
+    setInterval(function() {
+      http.get('http://bay-area-writing-coach.herokuapp.com')
+    }, 300000)
     return (
       <div className="App">
         <Router>
