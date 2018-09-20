@@ -97,30 +97,31 @@ class Samples extends Component {
     })
   }
 
+  handleQuote = e => {
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
+    let quote3 = randomQuote(quotes, 11)
+    let quote4 = randomQuote(quotes, 11)
+    this.setState({
+      quote: quote[0],
+      author: quote[1],
+      quote2: quote2[0],
+      author2: quote2[1],
+      quote3: quote3[0],
+      author3: quote3[1],
+      quote4: quote4[0],
+      author4: quote4[1]
+    })
+  }
+
   render() {
     const { menuFixed, overlayFixed, overlayRect } = this.state
 
-    const handleQuote = e => {
-      console.log('hey')
-      let quote = randomQuote(quotes, 11)
-      let quote2 = randomQuote(quotes, 11)
-      let quote3 = randomQuote(quotes, 11)
-      let quote4 = randomQuote(quotes, 11)
-      this.setState({
-        quote: quote[0],
-        author: quote[1],
-        quote2: quote2[0],
-        author2: quote2[1],
-        quote3: quote3[0],
-        author3: quote3[1],
-        quote4: quote4[0],
-        author4: quote4[1]
-      })
-    }
     return (
       <Container fluid>
         <Container fluid text>
           <Image
+            onClick={this.handleQuote}
             centered
             size="small"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
@@ -129,7 +130,7 @@ class Samples extends Component {
           <Header style={{ fontSize: '2.5em' }} as="h1">
             Portfolio
           </Header>
-          <Container fluid>
+          <Container style={{ color: 'rgb(41, 41, 41)' }} fluid>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
               <p> -{this.state.author}</p>
@@ -158,7 +159,9 @@ class Samples extends Component {
             <a href="https://td.org"> Taken Development </a>&
             <a href="https://td.org/td"> TD Magazine</a>
           </Header>
-          <Container text style={{ marginTop: '3em' }}>
+          <Container
+            text
+            style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
             <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
@@ -170,7 +173,7 @@ class Samples extends Component {
             className="images-container"
             fluid
             text
-            style={{ fontSize: '1.2em', marginTop: '1em' }}
+            style={{ fontSize: '1.2em', marginTop: '3em' }}
             textAlign="left">
             <Image
               as="a"
@@ -186,7 +189,9 @@ class Samples extends Component {
             <a href="https://td.org"> Taken Development </a>&
             <a href="https://td.org/td"> TD Magazine</a>
           </Header>
-          <Container text style={{ marginTop: '3em' }}>
+          <Container
+            text
+            style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
             <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote3}</p>
@@ -216,7 +221,7 @@ class Samples extends Component {
           </Header>
         </Container>
 
-        <Container text style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote4}</p>

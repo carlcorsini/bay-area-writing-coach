@@ -96,30 +96,31 @@ class Blog extends Component {
     })
   }
 
+  handleQuote = e => {
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
+    let quote3 = randomQuote(quotes, 11)
+    let quote4 = randomQuote(quotes, 11)
+    this.setState({
+      quote: quote[0],
+      author: quote[1],
+      quote2: quote2[0],
+      author2: quote2[1],
+      quote3: quote3[0],
+      author3: quote3[1],
+      quote4: quote4[0],
+      author4: quote4[1]
+    })
+  }
+
   render() {
     const { menuFixed, overlayFixed, overlayRect } = this.state
 
-    const handleQuote = e => {
-      console.log('hey')
-      let quote = randomQuote(quotes, 11)
-      let quote2 = randomQuote(quotes, 11)
-      let quote3 = randomQuote(quotes, 11)
-      let quote4 = randomQuote(quotes, 11)
-      this.setState({
-        quote: quote[0],
-        author: quote[1],
-        quote2: quote2[0],
-        author2: quote2[1],
-        quote3: quote3[0],
-        author3: quote3[1],
-        quote4: quote4[0],
-        author4: quote4[1]
-      })
-    }
     return (
       <Container>
         <Container fluid text>
           <Image
+            onClick={this.handleQuote}
             centered
             size="small"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
@@ -129,7 +130,7 @@ class Blog extends Component {
             Blog
           </Header>
 
-          <Container fluid>
+          <Container style={{ color: 'rgb(41, 41, 41)' }} fluid>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
               <p> -{this.state.author}</p>
@@ -200,7 +201,7 @@ class Blog extends Component {
             </List.Item>
           </List>
         </Container>
-        <Container text style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
@@ -219,7 +220,7 @@ class Blog extends Component {
             </List.Item>
           </List>
         </Container>
-        <Container text style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote3}</p>
@@ -469,7 +470,7 @@ class Blog extends Component {
             </Card>
           </Card.Group>
         </Container>
-        <Container text style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote4}</p>

@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import FadeIn from 'react-fade-in'
 import CopyToClipboard from 'react-copy-to-clipboard'
+import AnimateOnChange from 'react-animate-on-change'
 import React, { Component } from 'react'
 import {
   Card,
@@ -74,7 +75,8 @@ class HomePage extends Component {
     quote: '',
     author: '',
     quote2: '',
-    author2: ''
+    author2: '',
+    changed: false
   }
 
   componentDidMount() {
@@ -88,20 +90,20 @@ class HomePage extends Component {
     })
   }
 
+  handleQuote = e => {
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
+    this.setState({
+      quote: quote[0],
+      author: quote[1],
+      quote2: quote2[0],
+      author2: quote2[1]
+    })
+  }
+
   render() {
     const { menuFixed, overlayFixed, overlayRect } = this.state
 
-    const handleQuote = e => {
-      console.log('hey')
-      let quote = randomQuote(quotes, 11)
-      let quote2 = randomQuote(quotes, 11)
-      this.setState({
-        quote: quote[0],
-        author: quote[1],
-        quote2: quote2[0],
-        author2: quote2[1]
-      })
-    }
     return (
       <div>
         <style>{`
@@ -111,13 +113,19 @@ class HomePage extends Component {
         `}</style>
 
         <Container text>
-          {/* <Card centered> */}
+          {/* <AnimateOnChange
+            baseClassName="Score"
+            animationClassName="Score--bounce"
+            animate={this.state.author === 'Mark Twain'}>
+            Score: {this.state.author}
+          </AnimateOnChange> */}
           <Image
+            onClick={this.handleQuote}
             centered
             size="small"
             src="https://pre00.deviantart.net/d656/th/pre/i/2004/130/d/6/quill_and_ink.jpg"
           />
-          {/* </Card> */}
+
           <Header style={{ fontSize: '2.5em' }} as="h1">
             Bay Area Writing Coach
           </Header>
@@ -129,7 +137,7 @@ class HomePage extends Component {
             basic
             label="New Quote"
           /> */}
-          <Container>
+          <Container style={{ color: 'rgb(41, 41, 41)' }}>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
               <p> -{this.state.author}</p>
@@ -251,7 +259,7 @@ class HomePage extends Component {
               determination, “When you are going through hell, keep going.”
             </p>
           </Container>
-          <Container style={{ marginTop: '3em' }}>
+          <Container style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
             <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
