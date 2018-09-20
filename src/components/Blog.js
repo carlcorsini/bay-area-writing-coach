@@ -42,10 +42,6 @@ let quotes = [
     'Jack Kerouac'
   ],
   [
-    'I have not failed. I’ve just found 10,000 ways that won’t work.',
-    'Thomas Edison'
-  ],
-  [
     'You never have to change anything you got up in the middle of the night to write.',
     'Saul Bellow'
   ],
@@ -84,10 +80,10 @@ class Blog extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, 12)
-    let quote2 = randomQuote(quotes, 12)
-    let quote3 = randomQuote(quotes, 12)
-    let quote4 = randomQuote(quotes, 12)
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
+    let quote3 = randomQuote(quotes, 11)
+    let quote4 = randomQuote(quotes, 11)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -105,10 +101,10 @@ class Blog extends Component {
 
     const handleQuote = e => {
       console.log('hey')
-      let quote = randomQuote(quotes, 12)
-      let quote2 = randomQuote(quotes, 12)
-      let quote3 = randomQuote(quotes, 12)
-      let quote4 = randomQuote(quotes, 12)
+      let quote = randomQuote(quotes, 11)
+      let quote2 = randomQuote(quotes, 11)
+      let quote3 = randomQuote(quotes, 11)
+      let quote4 = randomQuote(quotes, 11)
       this.setState({
         quote: quote[0],
         author: quote[1],
@@ -204,7 +200,7 @@ class Blog extends Component {
             </List.Item>
           </List>
         </Container>
-        <Container style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
@@ -223,11 +219,11 @@ class Blog extends Component {
             </List.Item>
           </List>
         </Container>
-        <Container style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em' }}>
           <Divider />
           <FadeIn>
-            <p style={{ fontSize: '1.25em' }}>{this.state.quote4}</p>
-            <p> -{this.state.author4}</p>
+            <p style={{ fontSize: '1.25em' }}>{this.state.quote3}</p>
+            <p> -{this.state.author3}</p>
           </FadeIn>
           <Divider />
         </Container>
@@ -473,11 +469,11 @@ class Blog extends Component {
             </Card>
           </Card.Group>
         </Container>
-        <Container style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em' }}>
           <Divider />
           <FadeIn>
-            <p style={{ fontSize: '1.25em' }}>{this.state.quote3}</p>
-            <p> -{this.state.author3}</p>
+            <p style={{ fontSize: '1.25em' }}>{this.state.quote4}</p>
+            <p> -{this.state.author4}</p>
           </FadeIn>
           <Divider />
         </Container>

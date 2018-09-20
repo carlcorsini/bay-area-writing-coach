@@ -40,10 +40,6 @@ let quotes = [
     'Jack Kerouac'
   ],
   [
-    'I have not failed. I’ve just found 10,000 ways that won’t work.',
-    'Thomas Edison'
-  ],
-  [
     'You never have to change anything you got up in the middle of the night to write.',
     'Saul Bellow'
   ],
@@ -82,8 +78,8 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, 12)
-    let quote2 = randomQuote(quotes, 12)
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -97,8 +93,8 @@ class HomePage extends Component {
 
     const handleQuote = e => {
       console.log('hey')
-      let quote = randomQuote(quotes, 12)
-      let quote2 = randomQuote(quotes, 12)
+      let quote = randomQuote(quotes, 11)
+      let quote2 = randomQuote(quotes, 11)
       this.setState({
         quote: quote[0],
         author: quote[1],

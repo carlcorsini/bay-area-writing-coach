@@ -43,10 +43,6 @@ let quotes = [
     'Jack Kerouac'
   ],
   [
-    'I have not failed. I’ve just found 10,000 ways that won’t work.',
-    'Thomas Edison'
-  ],
-  [
     'You never have to change anything you got up in the middle of the night to write.',
     'Saul Bellow'
   ],
@@ -85,10 +81,10 @@ class Samples extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, 12)
-    let quote2 = randomQuote(quotes, 12)
-    let quote3 = randomQuote(quotes, 12)
-    let quote4 = randomQuote(quotes, 12)
+    let quote = randomQuote(quotes, 11)
+    let quote2 = randomQuote(quotes, 11)
+    let quote3 = randomQuote(quotes, 11)
+    let quote4 = randomQuote(quotes, 11)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -106,10 +102,10 @@ class Samples extends Component {
 
     const handleQuote = e => {
       console.log('hey')
-      let quote = randomQuote(quotes, 12)
-      let quote2 = randomQuote(quotes, 12)
-      let quote3 = randomQuote(quotes, 12)
-      let quote4 = randomQuote(quotes, 12)
+      let quote = randomQuote(quotes, 11)
+      let quote2 = randomQuote(quotes, 11)
+      let quote3 = randomQuote(quotes, 11)
+      let quote4 = randomQuote(quotes, 11)
       this.setState({
         quote: quote[0],
         author: quote[1],
@@ -162,7 +158,7 @@ class Samples extends Component {
             <a href="https://td.org"> Taken Development </a>&
             <a href="https://td.org/td"> TD magazine</a>
           </Header>
-          <Container style={{ marginTop: '3em' }}>
+          <Container text style={{ marginTop: '3em' }}>
             <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
@@ -190,14 +186,14 @@ class Samples extends Component {
             <a href="https://td.org"> Taken Development </a>&
             <a href="https://td.org/td"> TD magazine</a>
           </Header>
-          <Container style={{ marginTop: '3em' }}>
+          <Container text style={{ marginTop: '3em' }}>
             <Divider />
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote3}</p>
               <p> -{this.state.author3}</p>
             </FadeIn>
+            <Divider />
           </Container>
-          <Divider />
           <Container
             className="images-container"
             fluid
@@ -220,7 +216,7 @@ class Samples extends Component {
           </Header>
         </Container>
 
-        <Container style={{ marginTop: '3em' }}>
+        <Container text style={{ marginTop: '3em' }}>
           <Divider />
           <FadeIn>
             <p style={{ fontSize: '1.25em' }}>{this.state.quote4}</p>
