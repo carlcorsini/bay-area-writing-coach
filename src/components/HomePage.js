@@ -189,7 +189,7 @@ class HomePage extends Component {
             </Grid>
             <Divider />
           </Container>
-          <Container style={{ marginBottom: '3em' }}>
+          {/* <Container style={{ marginBottom: '3em' }}>
             <Image
               style={{ boxShadow: '1px 1px 10px 1px rgba(30, 31, 38, 0.58)' }}
               rounded
@@ -197,7 +197,7 @@ class HomePage extends Component {
               size="large"
               src="https://i.imgur.com/gxHkwWG.jpg"
             />
-          </Container>
+          </Container> */}
           <Container style={{ fontSize: '1.2em' }} textAlign="left">
             <Header textAlign="center">Philosophy</Header>
             <p>Writing is hard.</p>
