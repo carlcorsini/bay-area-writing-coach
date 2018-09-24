@@ -86,7 +86,7 @@ class Blog extends Component {
         </Container>
         <Header as="h2">Ten Tricks & Tips</Header>
         <Container text style={{ marginTop: '2em', textAlign: 'left' }}>
-          <List very relaxed size="big" divided bulleted>
+          <List relaxed size="big" divided bulleted>
             <List.Item>
               The use of humor is underrated. It keeps an audience tuned in. But
               it needs to be good.
@@ -157,7 +157,7 @@ class Blog extends Component {
         </Container>
         <Header as="h2">Book Recommendations</Header>
         <Container text style={{ marginTop: '2em', textAlign: 'left' }}>
-          <List very relaxed size="big" bulleted>
+          <List relaxed size="big" bulleted>
             <List.Item>The Elements of Style, by Strunk & White</List.Item>
             <List.Item>On Writing Well, by William Zinsser</List.Item>
             <List.Item>
@@ -176,7 +176,7 @@ class Blog extends Component {
         </Container>
         <Header as="h2">Author Recommendations</Header>
         <Container style={{ marginTop: '2em' }}>
-          <Card.Group raised centered>
+          <Card.Group centered>
             <Card
               link
               target="_blank"
