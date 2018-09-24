@@ -1,25 +1,8 @@
 import React, { Component } from 'react'
 import FadeIn from 'react-fade-in'
-import CopyToClipboard from 'react-copy-to-clipboard'
-import { Document } from 'react-pdf'
-import _ from 'lodash'
 import './blog.css'
-import ImgsViewer from 'react-images-viewer'
-import {
-  Card,
-  Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Visibility,
-  Button
-} from 'semantic-ui-react'
+
+import { Container, Divider, Header, Image } from 'semantic-ui-react'
 
 import quotes from './quotes'
 
@@ -73,8 +56,6 @@ class Samples extends Component {
   }
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state
-
     return (
       <Container fluid>
         <Container fluid text>

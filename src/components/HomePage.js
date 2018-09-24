@@ -1,21 +1,14 @@
-import _ from 'lodash'
 import FadeIn from 'react-fade-in'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import AnimateOnChange from 'react-animate-on-change'
+
 import React, { Component } from 'react'
 import {
-  Card,
   Container,
   Divider,
-  Dropdown,
   Grid,
   Header,
-  Icon,
   Image,
   List,
-  Menu,
-  Segment,
-  Visibility,
   Button
 } from 'semantic-ui-react'
 
@@ -60,8 +53,6 @@ class HomePage extends Component {
   }
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state
-
     return (
       <div>
         <style>{`
@@ -110,9 +101,9 @@ class HomePage extends Component {
             style={{ fontSize: '1.2em', marginTop: '1em' }}
             textAlign="left">
             <p>
-              Craig J. “Skip” Corsini, 67, is a lifelong Bay Area resident with
-              a lengthy career in multiple industries, having served in public
-              and corporate education, sales, marketing, communications, and
+              Craig J. “Skip” Corsini, is a lifelong Bay Area resident with a
+              lengthy career in multiple industries, having served in public and
+              corporate education, sales, marketing, communications, and
               non-profit program management. He is a 1973 graduate of the
               University of California at Berkeley in geography and holds
               California Teaching Credentials earned at Sonoma State University
@@ -128,15 +119,11 @@ class HomePage extends Component {
           </Container>
           <Container style={{ marginTop: '2em' }}>
             <Button.Group vertical>
-              <Button
-                icon="email"
-                primary
-                size="huge"
-                href="mailto:craigcorsini@gmail.com">
+              <Button primary size="huge" href="mailto:craigcorsini@gmail.com">
                 Inquire By Email
               </Button>
               <CopyToClipboard text={'craigcorsini@gmail.com'}>
-                <Button icon="copy" size="huge" secondary>
+                <Button size="huge" secondary>
                   Copy Email to Clipboard
                 </Button>
               </CopyToClipboard>

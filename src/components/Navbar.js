@@ -1,18 +1,6 @@
 import React, { Component } from 'react'
-import _ from 'lodash'
-import {
-  Container,
-  Divider,
-  Dropdown,
-  Grid,
-  Header,
-  Icon,
-  Image,
-  List,
-  Menu,
-  Segment,
-  Visibility
-} from 'semantic-ui-react'
+
+import { Container, Menu } from 'semantic-ui-react'
 
 const menuStyle = {
   borderRadius: 0,
@@ -34,7 +22,7 @@ class Navbar extends Component {
           <Menu.Item href="/blog" as="a">
             Blog
           </Menu.Item>
-          <Menu.Item icon="copy" as="a" href="mailto:craigcorsini@gmail.com">
+          <Menu.Item as="a" href="mailto:craigcorsini@gmail.com">
             craigcorsini@gmail.com
           </Menu.Item>
           <Menu.Item as="a" href="tel:7073295999">

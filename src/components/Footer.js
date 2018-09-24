@@ -1,19 +1,13 @@
 import React, { Component } from 'react'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import _ from 'lodash'
+
 import {
   Button,
   Container,
-  Divider,
-  Dropdown,
   Grid,
   Header,
-  Icon,
-  Image,
   List,
-  Menu,
-  Segment,
-  Visibility
+  Segment
 } from 'semantic-ui-react'
 
 class Footer extends Component {
@@ -54,16 +48,11 @@ class Footer extends Component {
                   structure to craigcorsini@gmail.com.
                 </p>
                 <Button.Group inverted basic vertical>
-                  <Button
-                    icon="email"
-                    primary
-                    href="mailto:craigcorsini@gmail.com">
+                  <Button primary href="mailto:craigcorsini@gmail.com">
                     Inquire By Email
                   </Button>
                   <CopyToClipboard text={'craigcorsini@gmail.com'}>
-                    <Button icon="copy" secondary>
-                      Copy Email to Clipboard
-                    </Button>
+                    <Button secondary>Copy Email to Clipboard</Button>
                   </CopyToClipboard>
                 </Button.Group>
                 <div style={{ marginTop: '1em', fontSize: '.75em' }}>

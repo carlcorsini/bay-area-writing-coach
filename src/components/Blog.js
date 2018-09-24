@@ -1,23 +1,13 @@
 import React, { Component } from 'react'
 import FadeIn from 'react-fade-in'
-import CopyToClipboard from 'react-copy-to-clipboard'
-import { Document } from 'react-pdf'
-import _ from 'lodash'
-import ImgsViewer from 'react-images-viewer'
+
 import {
   Card,
   Container,
   Divider,
-  Dropdown,
-  Grid,
   Header,
-  Icon,
   Image,
-  List,
-  Menu,
-  Segment,
-  Visibility,
-  Button
+  List
 } from 'semantic-ui-react'
 
 import quotes from './quotes'
@@ -72,8 +62,6 @@ class Blog extends Component {
   }
 
   render() {
-    const { menuFixed, overlayFixed, overlayRect } = this.state
-
     return (
       <Container>
         <Container fluid text>
