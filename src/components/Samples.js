@@ -22,10 +22,10 @@ class Samples extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(13)
-    let quote2 = randomQuote(13)
-    let quote3 = randomQuote(13)
-    let quote4 = randomQuote(13)
+    let quote = randomQuote(quotes, quotes.length - 1)
+    let quote2 = randomQuote(quotes, quotes.length - 1)
+    let quote3 = randomQuote(quotes, quotes.length - 1)
+    let quote4 = randomQuote(quotes, quotes.length - 1)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -39,10 +39,10 @@ class Samples extends Component {
   }
 
   handleQuote = e => {
-    let quote = randomQuote(13)
-    let quote2 = randomQuote(13)
-    let quote3 = randomQuote(13)
-    let quote4 = randomQuote(13)
+    let quote = randomQuote(quotes, quotes.length - 1)
+    let quote2 = randomQuote(quotes, quotes.length - 1)
+    let quote3 = randomQuote(quotes, quotes.length - 1)
+    let quote4 = randomQuote(quotes, quotes.length - 1)
     this.setState({
       quote: quote[0],
       author: quote[1],
