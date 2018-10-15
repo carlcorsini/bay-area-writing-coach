@@ -31,8 +31,8 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes.length - 1)
-    let quote2 = randomQuote(quotes.length - 1)
+    let quote = randomQuote(13)
+    let quote2 = randomQuote(13)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -42,8 +42,8 @@ class HomePage extends Component {
   }
 
   handleQuote = e => {
-    let quote = randomQuote(quotes.length - 1)
-    let quote2 = randomQuote(quotes.length - 1)
+    let quote = randomQuote(13)
+    let quote2 = randomQuote(13)
     this.setState({
       quote: quote[0],
       author: quote[1],
