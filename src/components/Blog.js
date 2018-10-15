@@ -28,10 +28,10 @@ class Blog extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, 12)
-    let quote2 = randomQuote(quotes, 12)
-    let quote3 = randomQuote(quotes, 12)
-    let quote4 = randomQuote(quotes, 12)
+    let quote = randomQuote(quotes.length - 1)
+    let quote2 = randomQuote(quotes.length - 1)
+    let quote3 = randomQuote(quotes.length - 1)
+    let quote4 = randomQuote(quotes.length - 1)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -45,10 +45,10 @@ class Blog extends Component {
   }
 
   handleQuote = e => {
-    let quote = randomQuote(quotes, 12)
-    let quote2 = randomQuote(quotes, 12)
-    let quote3 = randomQuote(quotes, 12)
-    let quote4 = randomQuote(quotes, 12)
+    let quote = randomQuote(quotes.length - 1)
+    let quote2 = randomQuote(quotes.length - 1)
+    let quote3 = randomQuote(quotes.length - 1)
+    let quote4 = randomQuote(quotes.length - 1)
     this.setState({
       quote: quote[0],
       author: quote[1],

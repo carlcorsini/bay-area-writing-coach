@@ -43,6 +43,10 @@ const quotes = [
   [
     'I hate that book, why did it have to end?',
     " Carl M. Corsini, age 4, to his mother upon her finishing the nightly reading of 'Stuart Little,' by E. B. White, in 1996."
+  ],
+  [
+    'It goes without saying, too, that those who hear a lot of poetry in their youth are likelier to become poets than those who do not.',
+    'Wallace Stegner'
   ]
 ]
 
