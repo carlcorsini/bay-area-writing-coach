@@ -7,10 +7,19 @@ import {
   Grid,
   Header,
   List,
-  Segment
+  Segment,
+  Transition,
+  Label
 } from 'semantic-ui-react'
 
 class Footer extends Component {
+  state = { visible: false }
+  handleCopy = e => {
+    this.setState({ visible: true })
+    setTimeout(() => {
+      this.setState({ visible: false })
+    }, 1000)
+  }
   render() {
     return (
       <Segment
@@ -48,12 +57,25 @@ class Footer extends Component {
                   structure to craigcorsini@gmail.com.
                 </p>
                 <Button.Group inverted basic vertical>
+                  <CopyToClipboard text={'craigcorsini@gmail.com'}>
+                    <Button onClick={this.handleCopy} secondary>
+                      Copy Email to Clipboard
+                    </Button>
+                  </CopyToClipboard>
+                  <Transition
+                    visible={this.state.visible}
+                    animation="browse"
+                    duration={250}>
+                    <Label
+                      size="tiny"
+                      style={{ position: 'absolute' }}
+                      color="red">
+                      Copied!
+                    </Label>
+                  </Transition>
                   <Button primary href="mailto:craigcorsini@gmail.com">
                     Inquire By Email
                   </Button>
-                  <CopyToClipboard text={'craigcorsini@gmail.com'}>
-                    <Button secondary>Copy Email to Clipboard</Button>
-                  </CopyToClipboard>
                 </Button.Group>
                 <div style={{ marginTop: '1em', fontSize: '.75em' }}>
                   <p>

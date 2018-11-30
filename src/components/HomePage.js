@@ -9,7 +9,9 @@ import {
   Header,
   Image,
   List,
-  Button
+  Button,
+  Label,
+  Transition
 } from 'semantic-ui-react'
 
 import quotes from './quotes'
@@ -21,6 +23,7 @@ const randomQuote = (array, max) => {
 
 class HomePage extends Component {
   state = {
+    visible: false,
     menuFixed: false,
     overlayFixed: false,
     quote: '',
@@ -31,8 +34,8 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    let quote = randomQuote(quotes, quotes.length + 1)
-    let quote2 = randomQuote(quotes, quotes.length + 1)
+    let quote = randomQuote(quotes, quotes.length)
+    let quote2 = randomQuote(quotes, quotes.length)
     this.setState({
       quote: quote[0],
       author: quote[1],
@@ -42,14 +45,21 @@ class HomePage extends Component {
   }
 
   handleQuote = e => {
-    let quote = randomQuote(quotes, quotes.length + 1)
-    let quote2 = randomQuote(quotes, quotes.length + 1)
+    let quote = randomQuote(quotes, quotes.length)
+    let quote2 = randomQuote(quotes, quotes.length)
     this.setState({
       quote: quote[0],
       author: quote[1],
       quote2: quote2[0],
       author2: quote2[1]
     })
+  }
+
+  handleCopy = e => {
+    this.setState({ visible: true })
+    setTimeout(() => {
+      this.setState({ visible: false })
+    }, 1000)
   }
 
   render() {
@@ -61,7 +71,7 @@ class HomePage extends Component {
           }
         `}</style>
 
-        <Container text>
+        <Container style={{ paddingBottom: '2em' }} text>
           {/* <AnimateOnChange
             baseClassName="Score"
             animationClassName="Score--bounce"
@@ -78,14 +88,7 @@ class HomePage extends Component {
           <Header style={{ fontSize: '2.5em' }} as="h1">
             Bay Area Writing Coach
           </Header>
-          {/* <Button
-            size="mini"
-            icon="refresh"
-            style={{ marginBottom: '1em' }}
-            onClick={handleQuote}
-            basic
-            label="New Quote"
-          /> */}
+
           <Container style={{ color: 'rgb(41, 41, 41)' }}>
             <FadeIn>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
@@ -117,20 +120,32 @@ class HomePage extends Component {
             </p>
             <p>Bay Area Writing Coach was established in 2018.</p>
           </Container>
+          <Header>Fee structure available upon request</Header>
           <Container style={{ marginTop: '2em' }}>
             <Button.Group vertical>
-              <Button primary size="huge" href="mailto:craigcorsini@gmail.com">
-                Inquire By Email
-              </Button>
               <CopyToClipboard text={'craigcorsini@gmail.com'}>
-                <Button size="huge" secondary>
+                <Button onClick={this.handleCopy} size="huge" secondary>
                   Copy Email to Clipboard
                 </Button>
               </CopyToClipboard>
+              <Transition
+                visible={this.state.visible}
+                animation="browse"
+                duration={250}>
+                <Label style={{ position: 'absolute' }} color="red">
+                  Copied!
+                </Label>
+              </Transition>
+              <Button primary size="huge" href="mailto:craigcorsini@gmail.com">
+                Inquire By Email
+              </Button>
             </Button.Group>
-            <Header>Fee structure available upon request</Header>
           </Container>
-          <Container style={{ marginTop: '5em', marginBottom: '3em' }}>
+          <Container
+            style={{
+              marginTop: '5em',
+              marginBottom: '3em'
+            }}>
             <Grid divided columns="equal" stackable>
               <Header>Services Include:</Header>
               <Grid.Row textAlign="center">
