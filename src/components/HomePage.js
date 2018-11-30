@@ -155,7 +155,7 @@ class HomePage extends Component {
                   }}>
                   <List>
                     <List.Item>Business Corespondence</List.Item>
-                    <List.Item>Feature Articles</List.Item>
+                    <List.Item>Cover Letters & Resumes</List.Item>
                     <List.Item>Marketing Copy</List.Item>
                   </List>
                 </Grid.Column>
@@ -167,9 +167,8 @@ class HomePage extends Component {
                   }}>
                   <List>
                     <List.Item>Fiction</List.Item>
+                    <List.Item>Feature Articles</List.Item>
                     <List.Item>Creative Writing</List.Item>
-                    <List.Item>Cover Letters</List.Item>
-                    <List.Item>Resumes</List.Item>
                   </List>
                 </Grid.Column>
               </Grid.Row>
