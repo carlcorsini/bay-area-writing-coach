@@ -1,4 +1,3 @@
-import FadeIn from 'react-fade-in'
 import CopyToClipboard from 'react-copy-to-clipboard'
 
 import React, { Component } from 'react'
@@ -24,6 +23,7 @@ const randomQuote = (array, max) => {
 class HomePage extends Component {
   state = {
     visible: false,
+    visibleQuote: false,
     menuFixed: false,
     overlayFixed: false,
     quote: '',
@@ -42,17 +42,24 @@ class HomePage extends Component {
       quote2: quote2[0],
       author2: quote2[1]
     })
+    setTimeout(() => {
+      this.setState({ visibleQuote: true })
+    }, 200)
   }
 
   handleQuote = e => {
-    let quote = randomQuote(quotes, quotes.length)
-    let quote2 = randomQuote(quotes, quotes.length)
-    this.setState({
-      quote: quote[0],
-      author: quote[1],
-      quote2: quote2[0],
-      author2: quote2[1]
-    })
+    this.setState({ visibleQuote: false })
+    setTimeout(() => {
+      let quote = randomQuote(quotes, quotes.length)
+      let quote2 = randomQuote(quotes, quotes.length)
+      this.setState({
+        quote: quote[0],
+        author: quote[1],
+        quote2: quote2[0],
+        author2: quote2[1]
+      })
+      this.setState({ visibleQuote: true })
+    }, 500)
   }
 
   handleCopy = e => {
@@ -65,19 +72,7 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <style>{`
-          html, body {
-            background: #fff;
-          }
-        `}</style>
-
         <Container style={{ paddingBottom: '2em' }} text>
-          {/* <AnimateOnChange
-            baseClassName="Score"
-            animationClassName="Score--bounce"
-            animate={this.state.author === 'Mark Twain'}>
-            Score: {this.state.author}
-          </AnimateOnChange> */}
           <Image
             onClick={this.handleQuote}
             centered
@@ -90,10 +85,18 @@ class HomePage extends Component {
           </Header>
 
           <Container style={{ color: 'rgb(41, 41, 41)' }}>
-            <FadeIn>
+            <Transition
+              visible={this.state.visibleQuote}
+              animation="fade up"
+              duration={500}>
               <p style={{ fontSize: '1.25em' }}>{this.state.quote}</p>
+            </Transition>
+            <Transition
+              visible={this.state.visibleQuote}
+              animation="fade up"
+              duration={500}>
               <p> -{this.state.author}</p>
-            </FadeIn>
+            </Transition>
           </Container>
         </Container>
 
@@ -229,10 +232,10 @@ class HomePage extends Component {
           </Container>
           <Container style={{ marginTop: '3em', color: 'rgb(41, 41, 41)' }}>
             <Divider />
-            <FadeIn>
-              <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
-              <p> -{this.state.author2}</p>
-            </FadeIn>
+
+            <p style={{ fontSize: '1.25em' }}>{this.state.quote2}</p>
+            <p> -{this.state.author2}</p>
+
             <Divider />
           </Container>
         </Container>
